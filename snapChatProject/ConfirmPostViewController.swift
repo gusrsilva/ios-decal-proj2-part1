@@ -14,8 +14,6 @@ class ConfirmPostViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var selectedFeed: UILabel!
     var imageToPost: UIImage?
-    // TODO: Figure out how to use ImageFeed to get this
-    let threadNames = ["Memes", "Dog Spots", "Random"]
     var currentFeed: String?
 
 
@@ -52,6 +50,9 @@ class ConfirmPostViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func didPressPostButton(_ sender: UIButton) {
         // TODO: Handle posting to the selected feed
         if let thread = currentFeed {
+            var imgs: [UIImage] = threads[thread]!
+            imgs.append(imageToPost!)
+            threads[thread] = imgs
             showPostSuccessAlert(thread)
         }
         else {

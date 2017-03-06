@@ -13,16 +13,16 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var feedTable: UITableView!
     var imageToView: UIImage?
     
-    
-    // TODO: Figure out how to use ImageFeed
-    var threads: [String: [UIImage]] = ["Memes":[#imageLiteral(resourceName: "dankMeme1"), #imageLiteral(resourceName: "dankMeme2"), #imageLiteral(resourceName: "dankMeme3")], "Dog Spots": [#imageLiteral(resourceName: "cutePuppy"), #imageLiteral(resourceName: "anotherCutePuppy"), #imageLiteral(resourceName: "amazingCutePuppy")], "Random": [#imageLiteral(resourceName: "berkAtNight"), #imageLiteral(resourceName: "Campanile"), #imageLiteral(resourceName: "dirks")]]
-    let threadNames = ["Memes", "Dog Spots", "Random"]
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         feedTable.delegate = self
         feedTable.dataSource = self
+        
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        feedTable.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
