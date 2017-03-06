@@ -11,6 +11,7 @@ import UIKit
 class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var feedTable: UITableView!
+    var imageToView: UIImage?
     
     
     // TODO: Figure out how to use ImageFeed
@@ -45,6 +46,23 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = feedTable.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedCell
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let name = threadNames[indexPath.section]
+        let imgs: [UIImage] = threads[name]!
+        imageToView = imgs[indexPath.item]
+        performSegue(withIdentifier: "feedToView", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "feedToView" {
+                if let dest = segue.destination as? ViewImageViewController {
+                    dest.imageToView = imageToView
+                }
+            }
+        }
     }
 
 }
