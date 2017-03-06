@@ -10,6 +10,8 @@ import UIKit
 
 class ImagePickerController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    var imageToPost: UIImage?
+    
     @IBOutlet var imageCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +26,19 @@ class ImagePickerController: UIViewController, UICollectionViewDataSource, UICol
 
     func selectImage(_ image: UIImage) {
         //The image being selected is passed in as "image".
-        
+        imageToPost = image
+        performSegue(withIdentifier: "pickerToConfirm", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "pickerToConfirm" {
+                if let dest = segue.destination as? ConfirmPostViewController {
+                    dest.imageToPost = self.imageToPost
+                }
+            }
+        }
+    }
     
     
     //DON'T MODIFY CODE HERE AND BELOW!

@@ -9,7 +9,9 @@
 import UIKit
 
 class ConfirmPostViewController: UIViewController {
-
+    
+    var imageToPost: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

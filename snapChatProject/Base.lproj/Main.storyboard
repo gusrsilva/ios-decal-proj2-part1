@@ -60,7 +60,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wYC-QR-9eI">
-                                <rect key="frame" x="0.0" y="89" width="375" height="529"/>
+                                <rect key="frame" x="0.0" y="45" width="375" height="622"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="EQS-2O-DNj">
                                     <size key="itemSize" width="236" height="203"/>
@@ -162,6 +162,6 @@
         <image name="post" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KFc-0i-wxI"/>
+        <segue reference="zfc-dQ-KN0"/>
     </inferredMetricsTieBreakers>
 </document>
