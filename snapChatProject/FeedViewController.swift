@@ -8,12 +8,20 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var feedTable: UITableView!
+    
+    
+    // TODO: Figure out how to use ImageFeed
+    var threads: [String: [UIImage]] = ["Memes":[#imageLiteral(resourceName: "dankMeme1"), #imageLiteral(resourceName: "dankMeme2"), #imageLiteral(resourceName: "dankMeme3")], "Dog Spots": [#imageLiteral(resourceName: "cutePuppy"), #imageLiteral(resourceName: "anotherCutePuppy"), #imageLiteral(resourceName: "amazingCutePuppy")], "Random": [#imageLiteral(resourceName: "berkAtNight"), #imageLiteral(resourceName: "Campanile"), #imageLiteral(resourceName: "dirks")]]
+    let threadNames = ["Memes", "Dog Spots", "Random"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        feedTable.delegate = self
+        feedTable.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +29,22 @@ class FeedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return threads.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return threadNames[section]
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let name = threadNames[section]
+        return (threads[name]?.count)!
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = feedTable.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedCell
+        return cell
+    }
 
 }
