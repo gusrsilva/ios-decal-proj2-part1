@@ -24,6 +24,7 @@ class Snap {
         self.read = false
     }
     
+    
     func markAsRead() -> Void {
         self.read = true
     }

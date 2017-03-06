@@ -10,12 +10,16 @@ import UIKit
 
 class ViewImageViewController: UIViewController {
 
-    var imageToView: UIImage?
+    var snapToView: Snap?
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var timeStampLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let img = imageToView {
-            image.image = img
+        if let snap = snapToView {
+            image.image = snap.image
+            authorLabel.text = snap.author
+            timeStampLabel.text = snap.getTimeStamp()
         }
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }

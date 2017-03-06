@@ -234,14 +234,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vEx-PZ-HQW">
-                                <rect key="frame" x="0.0" y="76" width="375" height="542"/>
+                                <rect key="frame" x="0.0" y="32" width="375" height="635"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="63" id="aH5-Yv-EwC" customClass="FeedCell" customModule="snapChatProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aH5-Yv-EwC" id="LE5-qf-D9j">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unread" translatesAutoresizingMaskIntoConstraints="NO" id="sl5-GJ-fdC">
@@ -329,21 +329,42 @@
                                     <action selector="didPressImage:" destination="xbK-IS-Vqw" eventType="touchUpInside" id="LzC-Ws-tHt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jv-Vv-9iU">
+                                <rect key="frame" x="6" y="20" width="104" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="rYp-qP-ejK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 seconds ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YB-c1-Lvt">
+                                <rect key="frame" x="6" y="39" width="77" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eVQ-O7-WkS" firstAttribute="trailing" secondItem="aIV-oZ-Jg2" secondAttribute="trailing" id="1Gw-vT-AjF"/>
                             <constraint firstItem="aIV-oZ-Jg2" firstAttribute="top" secondItem="N3c-It-P8u" secondAttribute="top" id="8Hk-En-KVB"/>
+                            <constraint firstItem="aIV-oZ-Jg2" firstAttribute="leading" secondItem="1Jv-Vv-9iU" secondAttribute="trailing" constant="-110" id="B8K-Vu-7NI"/>
                             <constraint firstItem="eVQ-O7-WkS" firstAttribute="top" secondItem="aIV-oZ-Jg2" secondAttribute="top" id="NmI-U4-24B"/>
                             <constraint firstItem="eVQ-O7-WkS" firstAttribute="leading" secondItem="N3c-It-P8u" secondAttribute="leading" id="adH-wI-uUj"/>
+                            <constraint firstItem="2YB-c1-Lvt" firstAttribute="top" secondItem="1Jv-Vv-9iU" secondAttribute="bottom" constant="-2" id="bHn-Zc-3ke"/>
                             <constraint firstItem="eVQ-O7-WkS" firstAttribute="bottom" secondItem="2kH-3L-RmO" secondAttribute="top" id="l4s-lI-Fsg"/>
                             <constraint firstAttribute="trailing" secondItem="eVQ-O7-WkS" secondAttribute="trailing" id="mcF-RH-pdR"/>
+                            <constraint firstItem="aIV-oZ-Jg2" firstAttribute="top" secondItem="1Jv-Vv-9iU" secondAttribute="bottom" constant="-41" id="mlh-QK-AyU"/>
                             <constraint firstItem="eVQ-O7-WkS" firstAttribute="leading" secondItem="aIV-oZ-Jg2" secondAttribute="leading" id="oCg-lm-XaR"/>
+                            <constraint firstItem="2YB-c1-Lvt" firstAttribute="leading" secondItem="1Jv-Vv-9iU" secondAttribute="leading" id="vFe-eD-9CB"/>
                             <constraint firstAttribute="bottom" secondItem="aIV-oZ-Jg2" secondAttribute="bottom" id="xiU-fa-rko"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authorLabel" destination="1Jv-Vv-9iU" id="Igy-Lg-Fm6"/>
                         <outlet property="image" destination="eVQ-O7-WkS" id="dYb-lV-6tk"/>
+                        <outlet property="timeStampLabel" destination="2YB-c1-Lvt" id="0WN-yF-v2o"/>
                         <segue destination="Dwi-8z-Qhh" kind="show" identifier="viewToFeed" animates="NO" id="tnQ-hP-A0j"/>
                     </connections>
                 </viewController>
@@ -378,7 +399,7 @@
         <image name="unread" width="79" height="79"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cE6-O2-l5j"/>
+        <segue reference="tnQ-hP-A0j"/>
         <segue reference="zfc-dQ-KN0"/>
     </inferredMetricsTieBreakers>
 </document>

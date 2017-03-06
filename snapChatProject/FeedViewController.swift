@@ -11,7 +11,7 @@ import UIKit
 class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var feedTable: UITableView!
-    var imageToView: UIImage?
+    var snapToView: Snap?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,16 +72,18 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let name = threadNames[indexPath.section]
         let snaps: [Snap] = threads[name]!
         let snap: Snap = snaps[indexPath.item]
-        imageToView = snap.image
-        snap.markAsRead()
-        performSegue(withIdentifier: "feedToView", sender: self)
+        snapToView = snap
+        if(!snap.read) {
+            snap.markAsRead()
+            performSegue(withIdentifier: "feedToView", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "feedToView" {
                 if let dest = segue.destination as? ViewImageViewController {
-                    dest.imageToView = imageToView
+                    dest.snapToView = snapToView
                 }
             }
         }
