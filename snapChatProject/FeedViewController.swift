@@ -49,6 +49,11 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // TODO: Mark as read using model
+        let cell = feedTable.cellForRow(at: indexPath) as! FeedCell
+        cell.readStatusIndicator.image = #imageLiteral(resourceName: "read")
+        
         let name = threadNames[indexPath.section]
         let imgs: [UIImage] = threads[name]!
         imageToView = imgs[indexPath.item]
