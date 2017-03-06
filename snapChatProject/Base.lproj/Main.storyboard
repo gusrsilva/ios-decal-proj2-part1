@@ -117,7 +117,7 @@
             </objects>
             <point key="canvasLocation" x="294" y="-783"/>
         </scene>
-        <!--Confirm Post View Controller-->
+        <!--Snapchat 2.0-->
         <scene sceneID="Io9-aT-a5F">
             <objects>
                 <viewController id="aFf-HU-rD5" customClass="ConfirmPostViewController" customModule="snapChatProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -210,6 +210,7 @@
                             <constraint firstItem="2nf-yQ-n1l" firstAttribute="top" secondItem="ZhZ-ZA-UXf" secondAttribute="top" id="yBk-tk-T4w"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Snapchat 2.0" id="oE1-6p-eVr"/>
                     <connections>
                         <outlet property="feedsTableView" destination="2nf-yQ-n1l" id="p3B-VZ-LzE"/>
                         <outlet property="selectedFeed" destination="SOx-Am-Wta" id="Efw-nj-TWG"/>

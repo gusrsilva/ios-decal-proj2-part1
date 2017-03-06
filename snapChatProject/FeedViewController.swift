@@ -45,18 +45,35 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = feedTable.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedCell
+        
+        let name = threadNames[indexPath.section]
+        let snaps: [Snap] = threads[name]!
+        let snap: Snap = snaps[indexPath.item]
+        
+        cell.nameLabel.text = snap.author
+        cell.timeStampLabel.text = snap.getTimeStamp()
+        if(snap.read) {
+            cell.readStatusIndicator.image = #imageLiteral(resourceName: "read")
+        }
+        else {
+            cell.readStatusIndicator.image = #imageLiteral(resourceName: "unread")
+        }
+        
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // TODO: Mark as read using model
-        let cell = feedTable.cellForRow(at: indexPath) as! FeedCell
-        cell.readStatusIndicator.image = #imageLiteral(resourceName: "read")
+//        let cell = feedTable.cellForRow(at: indexPath) as! FeedCell
+//        cell.readStatusIndicator.image = #imageLiteral(resourceName: "read")
         
         let name = threadNames[indexPath.section]
-        let imgs: [UIImage] = threads[name]!
-        imageToView = imgs[indexPath.item]
+        let snaps: [Snap] = threads[name]!
+        let snap: Snap = snaps[indexPath.item]
+        imageToView = snap.image
+        snap.markAsRead()
         performSegue(withIdentifier: "feedToView", sender: self)
     }
     

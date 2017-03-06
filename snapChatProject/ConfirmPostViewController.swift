@@ -50,9 +50,10 @@ class ConfirmPostViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func didPressPostButton(_ sender: UIButton) {
         // TODO: Handle posting to the selected feed
         if let thread = currentFeed {
-            var imgs: [UIImage] = threads[thread]!
-            imgs.append(imageToPost!)
-            threads[thread] = imgs
+            var snaps: [Snap] = threads[thread]!
+            // TODO: Update personWhoPosted
+            snaps.append(Snap(imageToPost: imageToPost!, personWhoPosted: "Gustavo"))
+            threads[thread] = snaps
             showPostSuccessAlert(thread)
         }
         else {
