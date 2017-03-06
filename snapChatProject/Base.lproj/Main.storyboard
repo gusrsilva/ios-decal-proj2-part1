@@ -223,7 +223,7 @@
         <!--Snapchat 2.0-->
         <scene sceneID="tyl-rI-zKw">
             <objects>
-                <viewController id="Dwi-8z-Qhh" customClass="FeedViewController" customModule="snapChatProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Dwi-8z-Qhh" customClass="FeedViewController" customModule="snapChatProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OSI-DR-Leg"/>
                         <viewControllerLayoutGuide type="bottom" id="Ve1-dg-uPN"/>
@@ -233,7 +233,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vEx-PZ-HQW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="76" width="375" height="542"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="63" id="aH5-Yv-EwC" customClass="FeedCell" customModule="snapChatProject" customModuleProvider="target">
@@ -291,10 +291,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vEx-PZ-HQW" firstAttribute="leading" secondItem="QiZ-PU-QgM" secondAttribute="leading" id="G1h-KF-OnF"/>
-                            <constraint firstItem="vEx-PZ-HQW" firstAttribute="bottom" secondItem="Ve1-dg-uPN" secondAttribute="top" id="JTN-G6-6Ar"/>
-                            <constraint firstItem="vEx-PZ-HQW" firstAttribute="top" secondItem="QiZ-PU-QgM" secondAttribute="top" id="Ory-Gz-jR6"/>
-                            <constraint firstAttribute="trailing" secondItem="vEx-PZ-HQW" secondAttribute="trailing" id="QPg-R7-str"/>
+                            <constraint firstItem="vEx-PZ-HQW" firstAttribute="bottom" secondItem="Ve1-dg-uPN" secondAttribute="top" id="6Kj-ez-Z8K"/>
+                            <constraint firstItem="vEx-PZ-HQW" firstAttribute="top" secondItem="OSI-DR-Leg" secondAttribute="bottom" constant="12" id="6ax-Qx-4HP"/>
+                            <constraint firstItem="vEx-PZ-HQW" firstAttribute="leading" secondItem="QiZ-PU-QgM" secondAttribute="leading" id="Gtf-ST-Vd5"/>
+                            <constraint firstAttribute="trailing" secondItem="vEx-PZ-HQW" secondAttribute="trailing" id="Mez-2c-U9g"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Snapchat 2.0" id="VqR-18-xQy"/>
@@ -377,7 +377,7 @@
         <image name="unread" width="79" height="79"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tnQ-hP-A0j"/>
+        <segue reference="cE6-O2-l5j"/>
         <segue reference="zfc-dQ-KN0"/>
     </inferredMetricsTieBreakers>
 </document>

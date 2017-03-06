@@ -23,7 +23,7 @@ class PostNavigationController: UINavigationController {
         let height: CGFloat = 35
         let bounds = self.navigationBar.bounds
         self.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height + height)
-        self.navigationBar.barTintColor = UIColor.darkGray
+        self.navigationBar.barTintColor = UIColor.init(red: 43/255.0, green: 198/255.0, blue: 165/255.0, alpha: 1.0)
         self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 30)]
         self.navigationBar.tintColor = UIColor.white
         self.navigationBar.backItem?.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
