@@ -127,15 +127,53 @@
                     <view key="view" contentMode="scaleToFill" id="ZhZ-ZA-UXf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2nf-yQ-n1l">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedPickerCell" rowHeight="71" id="KBY-x0-zWs" customClass="FeedPickerCell" customModule="snapChatProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KBY-x0-zWs" id="fXg-35-iE8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2n1-JR-eeW">
+                                                    <rect key="frame" x="144" y="25" width="87.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2n1-JR-eeW" firstAttribute="centerX" secondItem="fXg-35-iE8" secondAttribute="centerX" id="qRd-Af-BUS"/>
+                                                <constraint firstItem="2n1-JR-eeW" firstAttribute="centerY" secondItem="fXg-35-iE8" secondAttribute="centerY" id="zV4-CH-dV0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="feedName" destination="2n1-JR-eeW" id="gmU-Wl-cyZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2nf-yQ-n1l" secondAttribute="trailing" id="8C7-7v-fV5"/>
+                            <constraint firstItem="3Nx-TB-NfQ" firstAttribute="top" secondItem="2nf-yQ-n1l" secondAttribute="bottom" constant="76" id="BHk-nE-Hwr"/>
+                            <constraint firstItem="2nf-yQ-n1l" firstAttribute="top" secondItem="ZhZ-ZA-UXf" secondAttribute="top" id="cMo-rZ-XYu"/>
+                            <constraint firstItem="2nf-yQ-n1l" firstAttribute="leading" secondItem="ZhZ-ZA-UXf" secondAttribute="leading" id="fdD-3m-eBy"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="feedsTableView" destination="2nf-yQ-n1l" id="p3B-VZ-LzE"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="confirmToPicker" id="zfc-dQ-KN0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iKo-Zu-zxG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1190" y="-783"/>
+            <point key="canvasLocation" x="1189.5999999999999" y="-783.05847076461771"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="tyl-rI-zKw">
