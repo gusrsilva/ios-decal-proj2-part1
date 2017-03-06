@@ -51,15 +51,15 @@ class ConfirmPostViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func didPressPostButton(_ sender: UIButton) {
         // TODO: Handle posting to the selected feed
-        if let uFeed = currentFeed {
-        performSegue(withIdentifier: "confirmToPicker", sender: self)
+        if let thread = currentFeed {
+            showPostSuccessAlert(thread)
         }
         else {
-            openNoThreadSelectedAlert()
+            showNoThreadSelectedAlert()
         }
     }
     
-    func openNoThreadSelectedAlert() -> Void {
+    func showNoThreadSelectedAlert() -> Void {
         let alertTitle = "Whoops!"
         let alertMessage = "You haven't selected a thread to post to."
         
@@ -67,6 +67,21 @@ class ConfirmPostViewController: UIViewController, UITableViewDelegate, UITableV
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             switch action.style{
             default:
+                return
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showPostSuccessAlert(_ thread: String) -> Void {
+        let alertTitle = "Success!"
+        let alertMessage = "Your photo was posted to \(thread)."
+        
+        let alert: UIAlertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            default:
+                self.performSegue(withIdentifier: "confirmToPicker", sender: self)
                 return
             }
         }))
