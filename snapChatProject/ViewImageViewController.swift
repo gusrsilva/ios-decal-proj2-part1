@@ -37,7 +37,9 @@ class ViewImageViewController: UIViewController {
     */
 
     @IBAction func didPressImage(_ sender: Any) {
-        performSegue(withIdentifier: "viewToFeed", sender: self)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.popViewController(animated: false)
+//        performSegue(withIdentifier: "viewToFeed", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

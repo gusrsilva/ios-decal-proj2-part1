@@ -233,7 +233,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vEx-PZ-HQW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="63" id="aH5-Yv-EwC" customClass="FeedCell" customModule="snapChatProject" customModuleProvider="target">
@@ -377,7 +377,7 @@
         <image name="unread" width="79" height="79"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cE6-O2-l5j"/>
+        <segue reference="tnQ-hP-A0j"/>
         <segue reference="zfc-dQ-KN0"/>
     </inferredMetricsTieBreakers>
 </document>
