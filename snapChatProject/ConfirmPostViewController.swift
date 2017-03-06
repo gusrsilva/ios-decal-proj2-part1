@@ -81,7 +81,7 @@ class ConfirmPostViewController: UIViewController, UITableViewDelegate, UITableV
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             switch action.style{
             default:
-                self.performSegue(withIdentifier: "confirmToPicker", sender: self)
+                self.navigationController?.popViewController(animated: true)
                 return
             }
         }))
