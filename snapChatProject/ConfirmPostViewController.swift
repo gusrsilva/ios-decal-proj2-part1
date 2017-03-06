@@ -12,10 +12,12 @@ class ConfirmPostViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var feedsTableView: UITableView!
     
+    @IBOutlet weak var selectedFeed: UILabel!
     var imageToPost: UIImage?
-    
     // TODO: Figure out how to use ImageFeed to get this
     let threadNames = ["Memes", "Dog Spots", "Random"]
+    var currentFeed: String?
+
 
     
     override func viewDidLoad() {
@@ -42,6 +44,34 @@ class ConfirmPostViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        return
+        currentFeed = threadNames[indexPath.item]
+        selectedFeed.text = currentFeed
+        
     }
+    
+    @IBAction func didPressPostButton(_ sender: UIButton) {
+        // TODO: Handle posting to the selected feed
+        if let uFeed = currentFeed {
+        performSegue(withIdentifier: "confirmToPicker", sender: self)
+        }
+        else {
+            openNoThreadSelectedAlert()
+        }
+    }
+    
+    func openNoThreadSelectedAlert() -> Void {
+        let alertTitle = "Whoops!"
+        let alertMessage = "You haven't selected a thread to post to."
+        
+        let alert: UIAlertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            default:
+                return
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
 }
