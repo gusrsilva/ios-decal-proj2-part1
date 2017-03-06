@@ -17,7 +17,7 @@ class ViewImageViewController: UIViewController {
         if let img = imageToView {
             image.image = img
         }
-        // Do any additional setup after loading the view.
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,5 +38,9 @@ class ViewImageViewController: UIViewController {
 
     @IBAction func didPressImage(_ sender: Any) {
         performSegue(withIdentifier: "viewToFeed", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 }
