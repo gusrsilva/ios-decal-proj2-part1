@@ -41,7 +41,7 @@ class ConfirmPostViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         return
     }
 }
