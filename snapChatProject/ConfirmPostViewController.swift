@@ -23,6 +23,10 @@ class ConfirmPostViewController: UIViewController, UITableViewDelegate, UITableV
         feedsTableView.delegate = self
         feedsTableView.dataSource = self
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.backItem?.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
